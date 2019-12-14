@@ -1,0 +1,75 @@
+cigarett 
+	--> Score: 0.742717
+
+_ smoke _ 
+	--> Score: 0.732324
+
+smoke _ _ 
+	--> Score: 0.728183
+
+_ _ smoke 
+	--> Score: 0.724535
+
+smoke _ 
+	--> Score: 0.722267
+
+cigarett _ 
+	--> Score: 0.720969
+
+_ cigarett 
+	--> Score: 0.711480
+
+_ smoke 
+	--> Score: 0.708709
+
+nicotin 
+	--> Score: 0.700658
+
+_ cigarett _ 
+	--> Score: 0.692990
+
+pack 
+	--> Score: 0.692577
+
+smoke 
+	--> Score: 0.690747
+
+smoke free 
+	--> Score: 0.682013
+
+_ nicotin 
+	--> Score: 0.681442
+
+_ pack 
+	--> Score: 0.680610
+
+cigarett _ _ 
+	--> Score: 0.680137
+
+crave 
+	--> Score: 0.679991
+
+pack _ 
+	--> Score: 0.679341
+
+cig 
+	--> Score: 0.676200
+
+pack _ day 
+	--> Score: 0.669442
+
+quit smoke 
+	--> Score: 0.668578
+
+_ pack _ 
+	--> Score: 0.668258
+
+nicotin _ 
+	--> Score: 0.665616
+
+_ quit smoke 
+	--> Score: 0.662723
+
+cig _ 
+	--> Score: 0.661556
+
