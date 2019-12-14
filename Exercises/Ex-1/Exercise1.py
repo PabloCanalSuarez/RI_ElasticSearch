@@ -2,14 +2,14 @@
 # Author:      Clara and Pablo
 #-------------------------------------------------------------------------------
 
-import json # Para poder trabajar con objetos JSON
-import pprint # Para poder hacer uso de PrettyPrinter
-import sys # Para poder usar exit
+import json
+import sys
+from datetime import datetime
 
 from elasticsearch import Elasticsearch
 
 def main():
-    pp = pprint.PrettyPrinter(indent=2)
+
     es = Elasticsearch()
 
     ## Obtain significant terms
@@ -65,14 +65,14 @@ def main():
           "size": 100
         }
     )
-    f = open("results.txt","w+") ## file to save
+    f = open("results.txt","w+",encoding='utf8') ## file to save
     i = 1
     for x in results["hits"]["hits"]:
         f.write("Document: %d \n" % i)
         for y in x["_source"]:
-            f.write("%s: %s\n\t" %(y,x["_source"][y]))
+            f.write("%s: %s\n" %(y,x["_source"][y]))
         f.write("\n")
-        f.write("---------")
+        f.write("---------\n")
         i += 1
     f.close()
 
