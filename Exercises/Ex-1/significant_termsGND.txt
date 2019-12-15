@@ -1,21 +1,6 @@
 schizophrenia 
 	--> Score: 1.000000
 
-_ schizophrenia 
-	--> Score: 0.957555
-
-schizophrenia _ 
-	--> Score: 0.953878
-
-_ schizophrenia _ 
-	--> Score: 0.921028
-
-schizophrenia _ _ 
-	--> Score: 0.894969
-
-_ _ schizophrenia 
-	--> Score: 0.827959
-
 hallucin 
 	--> Score: 0.754173
 
@@ -25,35 +10,14 @@ diagnos _ schizophrenia
 delus 
 	--> Score: 0.740334
 
-hallucin _ 
-	--> Score: 0.739023
-
 schizophren 
 	--> Score: 0.733890
-
-delus _ 
-	--> Score: 0.729539
-
-_ delus 
-	--> Score: 0.720258
 
 develop schizophrenia 
 	--> Score: 0.717539
 
-_ schizophren 
-	--> Score: 0.715273
-
-_ delus _ 
-	--> Score: 0.715184
-
 psychot 
 	--> Score: 0.712095
-
-_ develop schizophrenia 
-	--> Score: 0.706784
-
-_ hallucin 
-	--> Score: 0.706460
 
 psychosi 
 	--> Score: 0.703663
@@ -61,38 +25,11 @@ psychosi
 car outsid 
 	--> Score: 0.702913
 
-_ car outsid 
-	--> Score: 0.702913
-
-develop schizophrenia _ 
-	--> Score: 0.702808
-
-_ _ delus 
-	--> Score: 0.702772
-
-schizophren _ 
-	--> Score: 0.699391
-
 paranoid schizophrenia 
 	--> Score: 0.698588
 
 like schizophrenia 
 	--> Score: 0.698588
-
-_ hallucin _ 
-	--> Score: 0.697776
-
-thirteen _ _ 
-	--> Score: 0.696718
-
-hallucin _ _ 
-	--> Score: 0.695499
-
-_ psychot 
-	--> Score: 0.693053
-
-_ psychosi 
-	--> Score: 0.691523
 
 schizophrenia _ bipolar 
 	--> Score: 0.689240
@@ -103,37 +40,13 @@ refus _ feed
 symptom _ schizophrenia 
 	--> Score: 0.689240
 
-_ thirteen _ 
-	--> Score: 0.687055
-
-thirteen _ 
-	--> Score: 0.687055
-
 psychot disord 
 	--> Score: 0.686462
-
-_ thirti seven 
-	--> Score: 0.685895
-
-_ book encyclopedia 
-	--> Score: 0.683990
-
-_ insid thing 
-	--> Score: 0.683990
 
 dine romm 
 	--> Score: 0.683990
 
 circumst scare 
-	--> Score: 0.683990
-
-_ stall shove 
-	--> Score: 0.683990
-
-_ tough kid 
-	--> Score: 0.683990
-
-_ guy fiddl 
 	--> Score: 0.683990
 
 fifti _ sixti 
@@ -142,55 +55,19 @@ fifti _ sixti
 discuss _ help 
 	--> Score: 0.683990
 
-_ simpli shove 
-	--> Score: 0.683990
-
-convinc case _ 
-	--> Score: 0.683990
-
 get better addict 
-	--> Score: 0.683990
-
-_ use teeth 
 	--> Score: 0.683990
 
 decent societi 
 	--> Score: 0.683990
 
-detail laugh _ 
-	--> Score: 0.683990
-
-_ cheapest chariti 
-	--> Score: 0.683990
-
 beach poor though 
-	--> Score: 0.683990
-
-_ survivor sub 
-	--> Score: 0.683990
-
-_ rare beat 
 	--> Score: 0.683990
 
 detect stori 
 	--> Score: 0.683990
 
 gone replac 
-	--> Score: 0.683990
-
-_ cousin hand 
-	--> Score: 0.683990
-
-_ rare heard 
-	--> Score: 0.683990
-
-_ us nice 
-	--> Score: 0.683990
-
-_ beach poor 
-	--> Score: 0.683990
-
-_ husband wife 
 	--> Score: 0.683990
 
 five occas 
@@ -202,19 +79,7 @@ book encyclopedia
 kid alway get 
 	--> Score: 0.683990
 
-_ fire suicid 
-	--> Score: 0.683990
-
-_ gpt scare 
-	--> Score: 0.683990
-
 cheapest chariti version 
-	--> Score: 0.683990
-
-_ adult roommat 
-	--> Score: 0.683990
-
-_ us rather 
 	--> Score: 0.683990
 
 convinc case 
@@ -229,49 +94,22 @@ hundr mile north
 drunken car 
 	--> Score: 0.683990
 
-_ judg figur 
-	--> Score: 0.683990
-
 camera get 
 	--> Score: 0.683990
 
 dope _ dad 
 	--> Score: 0.683990
 
-_ beach mile 
-	--> Score: 0.683990
-
-_ nest town 
-	--> Score: 0.683990
-
 fighter _ tough 
 	--> Score: 0.683990
 
-_ first eighteen 
-	--> Score: 0.683990
-
-_ steal twelv 
-	--> Score: 0.683990
-
 ad zero toler 
-	--> Score: 0.683990
-
-fire sleep _ 
 	--> Score: 0.683990
 
 decent societi say 
 	--> Score: 0.683990
 
 cousin hand 
-	--> Score: 0.683990
-
-_ therapi five 
-	--> Score: 0.683990
-
-_ deal grass 
-	--> Score: 0.683990
-
-_ read detect 
 	--> Score: 0.683990
 
 feel sexual look 

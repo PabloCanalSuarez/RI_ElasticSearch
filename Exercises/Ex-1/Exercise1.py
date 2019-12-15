@@ -48,7 +48,7 @@ def main():
     resultsGnd7 = list(genTermsGnd7)
     for term in termsGnd:
         print(term)
-    print("\n Total: ",len(resultsGnd7))
+    print("\n ############## Total GND 7 terms: ",len(resultsGnd7),"\n")
 
     finalDataGnd7 = []
     for x in resultsGnd7:
@@ -62,7 +62,7 @@ def main():
     resultsGnd10 = list(genTermsGnd10)
     for term in termsGnd:
         print(term)
-    print("\n Total: ",len(resultsGnd10))
+    print("\n ############## Total GND 10 terms: ",len(resultsGnd10), "\n")
 
     finalDataGnd10 = []
     for x in resultsGnd10:
@@ -84,10 +84,9 @@ def main():
 
 
 
-
-    ## ---------------------
-    ##      Chi square
-    ## ---------------------
+##     ---------------------
+##          Chi square
+##     ---------------------
     termsChi = getSignificantTermsCHI(es)
 
     genTermsChi7 = helpers.scan(es,
@@ -119,11 +118,11 @@ def main():
     )
 
 
-    ## Chi 7 ----------------------
+##     Chi 7 ----------------------
     resultsChi7 = list(genTermsChi7)
     for term in termsChi:
         print(term)
-    print("\t Total: ",len(resultsChi7))
+    print("\n ############## Total Chi 7 terms: ",len(resultsChi7),"\n")
 
 
     finalDataChi7 = []
@@ -134,11 +133,11 @@ def main():
         finalDataChi7.append(line)
 
 
-    ## Chi 10 ----------------------
+##     Chi 10 ----------------------
     resultsChi10 = list(genTermsChi10)
     for term in termsChi:
         print(term)
-    print("\n Total: ",len(resultsChi10))
+    print("\n ############## Total Chi 10 terms: ",len(resultsChi10),"\n")
 
 
     finalDataChi10 = []
@@ -149,11 +148,11 @@ def main():
         finalDataChi10.append(line)
 
 
-    ## To save the file collecting with 7 terms and GND
+##     To save the file collecting with 7 terms and GND
     with open('result_7terms_Chi.json', 'w') as f:
         json.dump(finalDataChi7, f)
 
-    ## To save the file collecting with 10 terms and GND
+##     To save the file collecting with 10 terms and GND
     with open('result_10terms_Chi.json', 'w') as f:
         json.dump(finalDataChi10, f)
 
@@ -182,7 +181,8 @@ def getSignificantTermsGND(es):
     saveSignificantTermsFile(results, "significant_termsGND.txt") ## save terms file
     terms = []
     for x in results["aggregations"]["Terminos significativos"]["buckets"]:
-        terms.append(x["key"])
+        if((not x["key"].startswith("_")) and (not x["key"].endswith("_"))):
+            terms.append(x["key"])
 
     return terms
 
@@ -210,7 +210,8 @@ def getSignificantTermsCHI(es):
     saveSignificantTermsFile(results, "significant_termsChi.txt") ## save terms file
     terms = []
     for x in results["aggregations"]["Terminos significativos"]["buckets"]:
-        terms.append(x["key"])
+        if((not x["key"].startswith("_")) and (not x["key"].endswith("_"))):
+            terms.append(x["key"])
 
     return terms
 
@@ -230,8 +231,9 @@ def saveFile(results, nameFile):
 def saveSignificantTermsFile(results, nameFile):
     f = open(nameFile,"w+",encoding='utf8') ## file to save
     for x in results["aggregations"]["Terminos significativos"]["buckets"]:
-        f.write("%s \n\t--> Score: %f" %(x["key"], x["score"]))
-        f.write("\n\n")
+        if((not x["key"].startswith("_")) and (not x["key"].endswith("_"))):
+            f.write("%s \n\t--> Score: %f" %(x["key"], x["score"]))
+            f.write("\n\n")
     f.close()
 
 

@@ -1,38 +1,14 @@
 schizophrenia 
 	--> Score: 126801.000000
 
-_ schizophrenia 
-	--> Score: 96553.034496
-
-schizophrenia _ 
-	--> Score: 94134.745897
-
-_ schizophrenia _ 
-	--> Score: 73991.253879
-
-schizophrenia _ _ 
-	--> Score: 59900.272704
-
-_ _ schizophrenia 
-	--> Score: 31339.621021
-
 diagnos _ schizophrenia 
 	--> Score: 11245.683254
 
 develop schizophrenia 
 	--> Score: 6425.496496
 
-_ develop schizophrenia 
-	--> Score: 5220.592373
-
-develop schizophrenia _ 
-	--> Score: 4818.970336
-
 hallucin 
 	--> Score: 4576.902927
-
-_ car outsid 
-	--> Score: 4521.118350
 
 car outsid 
 	--> Score: 4521.118350
@@ -49,15 +25,6 @@ schizophren
 delus 
 	--> Score: 4085.861907
 
-hallucin _ 
-	--> Score: 4051.961940
-
-thirteen _ _ 
-	--> Score: 3850.468416
-
-delus _ 
-	--> Score: 3688.185662
-
 schizophrenia _ bipolar 
 	--> Score: 3614.142237
 
@@ -67,49 +34,10 @@ refus _ feed
 symptom _ schizophrenia 
 	--> Score: 3614.142237
 
-_ schizophren 
-	--> Score: 3492.750737
-
-_ delus 
-	--> Score: 3292.226356
-
-_ delus _ 
-	--> Score: 3239.711026
-
-_ book encyclopedia 
-	--> Score: 3212.545540
-
-_ tough kid 
-	--> Score: 3212.545540
-
-_ insid thing 
-	--> Score: 3212.545540
-
-_ hous dozen 
-	--> Score: 3212.545540
-
 circumst scare 
 	--> Score: 3212.545540
 
 dine romm 
-	--> Score: 3212.545540
-
-_ fire suicid 
-	--> Score: 3212.545540
-
-_ stall shove 
-	--> Score: 3212.545540
-
-_ simpli shove 
-	--> Score: 3212.545540
-
-convinc case _ 
-	--> Score: 3212.545540
-
-_ us nice 
-	--> Score: 3212.545540
-
-_ survivor sub 
 	--> Score: 3212.545540
 
 book encyclopedia 
@@ -118,19 +46,7 @@ book encyclopedia
 kid alway get 
 	--> Score: 3212.545540
 
-_ guy fiddl 
-	--> Score: 3212.545540
-
-_ beach poor 
-	--> Score: 3212.545540
-
-_ adult roommat 
-	--> Score: 3212.545540
-
 five occas 
-	--> Score: 3212.545540
-
-_ gpt scare 
 	--> Score: 3212.545540
 
 get better addict 
@@ -148,22 +64,10 @@ dad got bad
 decent societi 
 	--> Score: 3212.545540
 
-_ use teeth 
-	--> Score: 3212.545540
-
-detail laugh _ 
-	--> Score: 3212.545540
-
-_ cheapest chariti 
-	--> Score: 3212.545540
-
 beach poor though 
 	--> Score: 3212.545540
 
 burn _ cousin 
-	--> Score: 3212.545540
-
-_ rare beat 
 	--> Score: 3212.545540
 
 detect stori 
@@ -172,22 +76,10 @@ detect stori
 gone replac 
 	--> Score: 3212.545540
 
-_ rare heard 
-	--> Score: 3212.545540
-
-_ cousin hand 
-	--> Score: 3212.545540
-
-_ wors assum 
-	--> Score: 3212.545540
-
 gay feel sexual 
 	--> Score: 3212.545540
 
 hundr mile north 
-	--> Score: 3212.545540
-
-_ us rather 
 	--> Score: 3212.545540
 
 convinc case 
@@ -202,16 +94,10 @@ drunken car
 dope _ dad 
 	--> Score: 3212.545540
 
-_ judg figur 
-	--> Score: 3212.545540
-
 hideous detail laugh 
 	--> Score: 3212.545540
 
 apac _ fourteen 
-	--> Score: 3212.545540
-
-_ deal grass 
 	--> Score: 3212.545540
 
 coffe tabl noth 
@@ -220,37 +106,13 @@ coffe tabl noth
 fighter _ tough 
 	--> Score: 3212.545540
 
-helpabl _ 
-	--> Score: 3212.545540
-
-_ spot mayb 
-	--> Score: 3212.545540
-
-_ nest town 
-	--> Score: 3212.545540
-
-_ beach mile 
-	--> Score: 3212.545540
-
 cousin mother got 
-	--> Score: 3212.545540
-
-burned.aft _ 
-	--> Score: 3212.545540
-
-_ first eighteen 
-	--> Score: 3212.545540
-
-_ steal twelv 
 	--> Score: 3212.545540
 
 knew _ autism 
 	--> Score: 3212.545540
 
 ad zero toler 
-	--> Score: 3212.545540
-
-fire sleep _ 
 	--> Score: 3212.545540
 
 everyday drunken 
@@ -265,25 +127,13 @@ kind teacher figur
 cousin hand 
 	--> Score: 3212.545540
 
-_ therapi five 
-	--> Score: 3212.545540
-
 began drink quit 
-	--> Score: 3212.545540
-
-_ read detect 
 	--> Score: 3212.545540
 
 feel sexual look 
 	--> Score: 3212.545540
 
 aunt grew tire 
-	--> Score: 3212.545540
-
-_ snipe 
-	--> Score: 3212.545540
-
-_ husband wife 
 	--> Score: 3212.545540
 
 deal grass 
