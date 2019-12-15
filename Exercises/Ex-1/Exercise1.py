@@ -1,32 +1,171 @@
 #-------------------------------------------------------------------------------
-# Author:      Clara and Pablo
+# Authors:      Clara and Pablo
 #-------------------------------------------------------------------------------
 
 import json
 import sys
 from datetime import datetime
-
 from elasticsearch import Elasticsearch
+from elasticsearch import helpers
 
 def main():
     es = Elasticsearch()
-    ## Obtain significant terms
-    getSignificantTerms(es)
 
-    ## Exercise 1
-    ## Query All significant terms
-    getDocuments_AllTerms(es)
-    getDocuments_FirstTerms(es)
-    getDocuments_LastTerms(es)
+    ## ---------------------
+    ##          Gnd
+    ## ---------------------
+    termsGnd = getSignificantTermsGND(es)
 
-def getSignificantTerms(es):
+    genTermsGnd7 = helpers.scan(es,
+        query = {
+            "query": {
+                "match": {
+                    "selftext": {
+                        "query": ""+termsGnd[0]+","+termsGnd[1]+","+termsGnd[2]+","+termsGnd[3]+","+termsGnd[4]+","+termsGnd[5]+","+termsGnd[6],
+                        "operator": "or"
+                    }
+                }
+            }
+        },
+        index="reddit-mentalhealth4"
+    )
+
+    genTermsGnd10 = helpers.scan(es,
+        query = {
+            "query": {
+                "match": {
+                    "selftext": {
+                        "query": ""+termsGnd[0]+","+termsGnd[1]+","+termsGnd[2]+","+termsGnd[3]+","+termsGnd[4]+","+termsGnd[5]+","+termsGnd[6]+","+termsGnd[7]+","+termsGnd[8]+","+termsGnd[9],
+                        "operator": "or"
+                    }
+                }
+            }
+        },
+        index="reddit-mentalhealth4"
+    )
+
+    ## Gnd 7
+    resultsGnd7 = list(genTermsGnd7)
+    for term in termsGnd:
+        print(term)
+    print("\n Total: ",len(resultsGnd7))
+
+    finalDataGnd7 = []
+    for x in resultsGnd7:
+        line={  "author": x["_source"]["author"],
+                "creation date": datetime.utcfromtimestamp(int(x["_source"]["created_utc"])).strftime('%Y-%m-%d %H:%M:%S'),
+                "selftext": x["_source"]["selftext"]}
+        finalDataGnd7.append(line)
+
+
+    ## Gnd 10
+    resultsGnd10 = list(genTermsGnd10)
+    for term in termsGnd:
+        print(term)
+    print("\n Total: ",len(resultsGnd10))
+
+    finalDataGnd10 = []
+    for x in resultsGnd10:
+        line={  "author": x["_source"]["author"],
+                "creation date": datetime.utcfromtimestamp(int(x["_source"]["created_utc"])).strftime('%Y-%m-%d %H:%M:%S'),
+                "selftext": x["_source"]["selftext"]}
+        finalDataGnd10.append(line)
+
+
+    ## To save the file collecting with 7 terms and GND
+    with open('result_7terms_GND.json', 'w') as f:
+        json.dump(finalDataGnd7, f)
+
+    ## To save the file collecting with 10 terms and GND
+    with open('result_10terms_GND.json', 'w') as f:
+        json.dump(finalDataGnd10, f)
+
+
+
+
+
+
+    ## ---------------------
+    ##      Chi square
+    ## ---------------------
+    termsChi = getSignificantTermsCHI(es)
+
+    genTermsChi7 = helpers.scan(es,
+        query = {
+            "query": {
+                "match": {
+                    "selftext": {
+                        "query": ""+termsChi[0]+","+termsChi[1]+","+termsChi[2]+","+termsChi[3]+","+termsChi[4]+","+termsChi[5]+","+termsChi[6],
+                        "operator": "or"
+                    }
+                }
+            }
+        },
+        index="reddit-mentalhealth4"
+    )
+
+    genTermsChi10 = helpers.scan(es,
+        query = {
+            "query": {
+                "match": {
+                    "selftext": {
+                        "query": ""+termsChi[0]+","+termsChi[1]+","+termsChi[2]+","+termsChi[3]+","+termsChi[4]+","+termsChi[5]+","+termsChi[6]+","+termsChi[7]+","+termsChi[8]+","+termsChi[9],
+                        "operator": "or"
+                    }
+                }
+            }
+        },
+        index="reddit-mentalhealth4"
+    )
+
+
+    ## Chi 7 ----------------------
+    resultsChi7 = list(genTermsChi7)
+    for term in termsChi:
+        print(term)
+    print("\t Total: ",len(resultsChi7))
+
+
+    finalDataChi7 = []
+    for x in resultsChi7:
+        line={  "author": x["_source"]["author"],
+                "creation date": datetime.utcfromtimestamp(int(x["_source"]["created_utc"])).strftime('%Y-%m-%d %H:%M:%S'),
+                "selftext": x["_source"]["selftext"]}
+        finalDataChi7.append(line)
+
+
+    ## Chi 10 ----------------------
+    resultsChi10 = list(genTermsChi10)
+    for term in termsChi:
+        print(term)
+    print("\n Total: ",len(resultsChi10))
+
+
+    finalDataChi10 = []
+    for x in resultsChi10:
+        line={  "author": x["_source"]["author"],
+                "creation date": datetime.utcfromtimestamp(int(x["_source"]["created_utc"])).strftime('%Y-%m-%d %H:%M:%S'),
+                "selftext": x["_source"]["selftext"]}
+        finalDataChi10.append(line)
+
+
+    ## To save the file collecting with 7 terms and GND
+    with open('result_7terms_Chi.json', 'w') as f:
+        json.dump(finalDataChi7, f)
+
+    ## To save the file collecting with 10 terms and GND
+    with open('result_10terms_Chi.json', 'w') as f:
+        json.dump(finalDataChi10, f)
+
+
+def getSignificantTermsGND(es):
     results = es.search(
         index="reddit-mentalhealth4",
         body = {
             "size":0,
             "query": {
                 "match": {
-                  "subreddit": "stopsmoking"
+                  "selftext": "schizophrenia"
                 }
               },
               "aggs": {
@@ -34,104 +173,47 @@ def getSignificantTerms(es):
                   "significant_terms": {
                     "gnd": {},
                     "field": "selftext",
-                    "size": 25
+                    "size": 100
                   }
                 }
               }
         }
     )
-    saveSignificantTermsFile(results, "significant_terms.txt")
+    saveSignificantTermsFile(results, "significant_termsGND.txt") ## save terms file
+    terms = []
+    for x in results["aggregations"]["Terminos significativos"]["buckets"]:
+        terms.append(x["key"])
 
+    return terms
 
-def getDocuments_AllTerms(es):
+def getSignificantTermsCHI(es):
     results = es.search(
         index="reddit-mentalhealth4",
         body = {
-
-          "_source": ["author","created_utc","selftext"],
-          "query": {
-            "bool": {
-              "must": [
-                {
-                  "match": {
-                    "subreddit": "stopsmoking"
-                  }
-                },
-                {
-                  "match": {
-                    "selftext": {
-                      "query": "smoke smoker crave cigarrette quit nicotin pack",
-                      "operator": "or"
-                    }
+            "size":0,
+            "query": {
+                "match": {
+                  "selftext": "schizophrenia"
+                }
+              },
+              "aggs": {
+                "Terminos significativos": {
+                  "significant_terms": {
+                    "chi_square": {},
+                    "field": "selftext",
+                    "size": 100
                   }
                 }
-              ]
-            }
-          },
-          "size": 100
+              }
         }
     )
-    saveFile(results, "1_All_significant_terms.txt")
+    saveSignificantTermsFile(results, "significant_termsChi.txt") ## save terms file
+    terms = []
+    for x in results["aggregations"]["Terminos significativos"]["buckets"]:
+        terms.append(x["key"])
 
-def getDocuments_FirstTerms(es):
-    results = es.search(
-        index="reddit-mentalhealth4",
-        body = {
+    return terms
 
-          "_source": ["author","created_utc","selftext"],
-          "query": {
-            "bool": {
-              "must": [
-                {
-                  "match": {
-                    "subreddit": "stopsmoking"
-                  }
-                },
-                {
-                  "match": {
-                    "selftext": {
-                      "query": "smoke smoker crave cigarrette",
-                      "operator": "or"
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          "size": 100
-        }
-    )
-    saveFile(results, "1_First_significant_terms.txt")
-
-def getDocuments_LastTerms(es):
-    results = es.search(
-        index="reddit-mentalhealth4",
-        body = {
-
-          "_source": ["author","created_utc","selftext"],
-          "query": {
-            "bool": {
-              "must": [
-                {
-                  "match": {
-                    "subreddit": "stopsmoking"
-                  }
-                },
-                {
-                  "match": {
-                    "selftext": {
-                      "query": "cigarrette quit nicotin pack",
-                      "operator": "or"
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          "size": 100
-        }
-    )
-    saveFile(results, "1_Last_significant_terms.txt")
 
 def saveFile(results, nameFile):
     f = open(nameFile,"w+",encoding='utf8') ## file to save
